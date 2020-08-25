@@ -9,20 +9,20 @@ const argv = yargs
         type: "string",
         describe: "The type of value (ex: length, area, volume, etc.),\nif not given, it will be recognized automatically."
     })
-    .option("value", {
+    .option("v", {
         type: "number",
         describe: "The input value.",
-        alias: "v"
+        alias: "value"
     })
-    .option("from", {
+    .option("f", {
         type: "string",
         describe: "The unit of the input value.",
-        alias: "f"
+        alias: "from"
     })
-    .option("to", {
+    .option("t", {
         type: "string",
         describe: "The output unit.",
-        alias: "t"
+        alias: "to"
     })
     .argv
 
