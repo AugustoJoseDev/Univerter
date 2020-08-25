@@ -1,7 +1,7 @@
 {
     "name": "univerter",
     "version": "1.0.0",
-    "description": "a simple and useful unit converter cli.",
+    "description": "A simple and useful unit converter cli.",
     "main": "bin/index.js",
     "repository": "https://github.com/AugustoJoseDev/Univerter",
     "author": "AugustoJoseDev <jose.augusto.comparotto@gmail.com>",
