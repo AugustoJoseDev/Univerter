@@ -1,42 +1,150 @@
 {
-    "length": [
+    "multiples": [
         {
-            "name": "inch",
-            "plural": "inches",
-            "symbol": "in",
-            "aliases": ["\""],
-            "value": 1
+            "name": "iota",
+            "symbol": "Y",
+            "value": 1e24
         },
         {
-            "name": "feet",
-            "plural": "feets",
-            "symbol": "ft",
-            "aliases": ["'"],
-            "value": 12
+            "name": "zeta",
+            "symbol": "Z",
+            "value": 1e21
         },
         {
-            "name": "yard",
-            "plural": "yards",
-            "symbol": "yd",
-            "value": 36
+            "name": "exa",
+            "symbol": "E",
+            "value": 1e18
         },
         {
-            "name": "metre",
-            "plural": "metres",
+            "name": "peta",
+            "symbol": "P",
+            "value": 1e15
+        },
+        {
+            "name": "tera",
+            "symbol": "T",
+            "value": 1e12
+        },
+        {
+            "name": "giga",
+            "symbol": "G",
+            "value": 1e9
+        },
+        {
+            "name": "mega",
+            "symbol": "M",
+            "value": 1e6
+        },
+        {
+            "name": "kilo",
+            "symbol": "k",
+            "value": 1e3
+        },
+        {
+            "name": "hecto",
+            "symbol": "h",
+            "value": 1e2
+        },
+        {
+            "name": "deca",
+            "symbol": "da",
+            "value": 1e1
+        },
+        {
+            "name": "deci",
+            "symbol": "d",
+            "value": 1e-1
+        },
+        {
+            "name": "centi",
+            "symbol": "c",
+            "value": 1e-2
+        },
+        {
+            "name": "milli",
             "symbol": "m",
-            "value": 39.37007874015748096
+            "value": 1e-3
         },
         {
-            "name": "mile",
-            "plural": "miles",
-            "symbol": "mi",
-            "value": 63360
+            "name": "micro",
+            "symbol": "u",
+            "value": 1e-6
         },
         {
-            "name": "nautic mile",
-            "plural": "nautic miles",
-            "symbol": "nmi",
-            "value": 72913.385826771656704
+            "name": "nano",
+            "symbol": "n",
+            "value": 1e-9
+        },
+        {
+            "name": "pico",
+            "symbol": "p",
+            "value": 1e-12
+        },
+        {
+            "name": "femto",
+            "symbol": "f",
+            "value": 1e-15
+        },
+        {
+            "name": "atto",
+            "symbol": "a",
+            "value": 1e-18
+        },
+        {
+            "name": "zepto",
+            "symbol": "z",
+            "value": 1e-21
+        },
+        {
+            "name": "iocto",
+            "symbol": "y",
+            "value": 1e-24
         }
-    ]
+    ],
+    "classes": {
+        "length": [
+            {
+                "name": "inch",
+                "plural": "inches",
+                "symbol": "in",
+                "aliases": [
+                    "\""
+                ],
+                "value": 1
+            },
+            {
+                "name": "feet",
+                "plural": "feets",
+                "symbol": "ft",
+                "aliases": [
+                    "'"
+                ],
+                "value": 12
+            },
+            {
+                "name": "yard",
+                "plural": "yards",
+                "symbol": "yd",
+                "value": 36
+            },
+            {
+                "name": "metre",
+                "plural": "metres",
+                "symbol": "m",
+                "value": 39.37007874015748096
+            },
+            {
+                "name": "mile",
+                "plural": "miles",
+                "symbol": "mi",
+                "value": 63360
+            },
+            {
+                "name": "nautic mile",
+                "plural": "nautic miles",
+                "symbol": "nmi",
+                "value": 72913.385826771656704
+            }
+        ]
+    }
 }
