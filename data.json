@@ -1,0 +1,42 @@
+{
+    "length": [
+        {
+            "name": "inch",
+            "plural": "inches",
+            "symbol": "in",
+            "aliases": ["\""],
+            "value": 1
+        },
+        {
+            "name": "feet",
+            "plural": "feets",
+            "symbol": "ft",
+            "aliases": ["'"],
+            "value": 12
+        },
+        {
+            "name": "yard",
+            "plural": "yards",
+            "symbol": "yd",
+            "value": 36
+        },
+        {
+            "name": "metre",
+            "plural": "metres",
+            "symbol": "m",
+            "value": 39.37007874015748096
+        },
+        {
+            "name": "mile",
+            "plural": "miles",
+            "symbol": "mi",
+            "value": 63360
+        },
+        {
+            "name": "nautic mile",
+            "plural": "nautic miles",
+            "symbol": "nmi",
+            "value": 72913.385826771656704
+        }
+    ]
+}
