@@ -1,150 +1,75 @@
 {
-    "multiples": [
-        {
-            "name": "iota",
-            "symbol": "Y",
-            "value": 1e24
-        },
-        {
-            "name": "zeta",
-            "symbol": "Z",
-            "value": 1e21
-        },
-        {
-            "name": "exa",
-            "symbol": "E",
-            "value": 1e18
-        },
-        {
-            "name": "peta",
-            "symbol": "P",
-            "value": 1e15
-        },
-        {
-            "name": "tera",
-            "symbol": "T",
-            "value": 1e12
-        },
-        {
-            "name": "giga",
-            "symbol": "G",
-            "value": 1e9
-        },
-        {
-            "name": "mega",
-            "symbol": "M",
-            "value": 1e6
-        },
-        {
-            "name": "kilo",
-            "symbol": "k",
-            "value": 1e3
-        },
-        {
-            "name": "hecto",
-            "symbol": "h",
-            "value": 1e2
-        },
-        {
-            "name": "deca",
-            "symbol": "da",
-            "value": 1e1
-        },
-        {
-            "name": "deci",
-            "symbol": "d",
-            "value": 1e-1
-        },
-        {
-            "name": "centi",
-            "symbol": "c",
-            "value": 1e-2
-        },
-        {
-            "name": "milli",
-            "symbol": "m",
-            "value": 1e-3
-        },
-        {
-            "name": "micro",
-            "symbol": "u",
-            "value": 1e-6
-        },
-        {
-            "name": "nano",
-            "symbol": "n",
-            "value": 1e-9
-        },
-        {
-            "name": "pico",
-            "symbol": "p",
-            "value": 1e-12
-        },
-        {
-            "name": "femto",
-            "symbol": "f",
-            "value": 1e-15
-        },
-        {
-            "name": "atto",
-            "symbol": "a",
-            "value": 1e-18
-        },
-        {
-            "name": "zepto",
-            "symbol": "z",
-            "value": 1e-21
-        },
-        {
-            "name": "iocto",
-            "symbol": "y",
-            "value": 1e-24
+    "types": {
+        "length": {
+            "inch": 1,
+            "feet": 12,
+            "yard": 36,
+            "metre": 39.37007874015748096,
+            "mile": 63360,
+            "nautic mile": 72913.385826771656704
         }
-    ],
-    "classes": {
-        "length": [
-            {
-                "name": "inch",
-                "plural": "inches",
-                "symbol": "in",
-                "aliases": [
-                    "\""
-                ],
-                "value": 1
-            },
-            {
-                "name": "feet",
-                "plural": "feets",
-                "symbol": "ft",
-                "aliases": [
-                    "'"
-                ],
-                "value": 12
-            },
-            {
-                "name": "yard",
-                "plural": "yards",
-                "symbol": "yd",
-                "value": 36
-            },
-            {
-                "name": "metre",
-                "plural": "metres",
-                "symbol": "m",
-                "value": 39.37007874015748096
-            },
-            {
-                "name": "mile",
-                "plural": "miles",
-                "symbol": "mi",
-                "value": 63360
-            },
-            {
-                "name": "nautic mile",
-                "plural": "nautic miles",
-                "symbol": "nmi",
-                "value": 72913.385826771656704
-            }
-        ]
+    },
+    "prefixes": {
+        "yotta": 1e24,
+        "zetta": 1e21,
+        "exa": 1e18,
+        "peta": 1e15,
+        "tera": 1e12,
+        "giga": 1e9,
+        "mega": 1e6,
+        "kilo": 1e3,
+        "hecto": 1e2,
+        "deca": 1e1,
+        "deci": 1e-1,
+        "centi": 1e-2,
+        "milli": 1e-3,
+        "micro": 1e-6,
+        "nano": 1e-9,
+        "pico": 1e-12,
+        "femto": 1e-15,
+        "atto": 1e-18,
+        "zepto": 1e-21,
+        "yocto": 1e-24
+    },
+    "aliases": {
+        "length": {
+            "inch": ["in", "inches", "polegadas", "pol", "pols", "inch"],
+            "feet": ["ft", "fts", "feets", "pé", "pe", "pés", "pes"],
+            "yard": ["yd", "yds", "yards", "jd", "jds", "jarda", "jardas"],
+            "metre": ["m", "metres", "metro", "metros"],
+            "mile": ["mi", "miles", "milha", "milhas"],
+            "nautic mile": [
+                "nmi",
+                "nautic",
+                "nautic mile",
+                "nautic miles",
+                "milha nautica",
+                "milhas nauticas",
+                "milha náutica",
+                "milhas náuticas"
+            ]
+        },
+        "prefixes": {
+            "yotta": ["Y"],
+            "zetta": ["Z"],
+            "exa": ["E"],
+            "peta": ["P"],
+            "tera": ["T"],
+            "giga": ["G"],
+            "mega": ["M"],
+            "kilo": ["k"],
+            "hecto": ["h"],
+            "deca": ["da"],
+            "deci": ["d"],
+            "centi": ["c"],
+            "milli": ["m"],
+            "micro": ["u"],
+            "nano": ["n"],
+            "pico": ["p"],
+            "femto": ["f"],
+            "atto": ["a"],
+            "zepto": ["z"],
+            "yocto": ["y"]
+        }
     }
 }
