@@ -1,9 +1,13 @@
 #!/usr/bin/env node
+const yargs = require('yargs')
+const { convert } = require("../src/converter")
 
-const argv = require("yargs")
+const { value, from, to, type } = yargs
     .usage("Usage: $0 [options] [--type <type>] <value> <from> <to>")
-    .example("$0 1 ft --to in", "It will return the value 12")
-    .example("$0 1 ft in", "Also returns 12")
+    .example("$0 1 ft --to inches", "Returns 12")
+    .example("$0 1 ft in", "Returns 12")
+    .example("$0 --from yds 1 --to in", "Returns 3")
+    .example("$0 metres inches --value 1", "Returns 39.37")
     .help()
     .version()
     .option("type", {
@@ -42,4 +46,11 @@ const argv = require("yargs")
     .strict(true)
     .argv
 
-console.warn("Not avaliable yet ;-;")
+
+try {
+    console.log(convert({ type, value, from, to }))
+} catch (error) {
+    yargs
+        .epilog(error.message)
+        .showHelp()
+}
