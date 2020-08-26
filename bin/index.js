@@ -1,29 +1,44 @@
 #!/usr/bin/env node
-const yargs = require("yargs")
 
-const argv = yargs
+const argv = require("yargs")
     .usage("Usage: $0 [options] [--type <type>] <value> <from> <to>")
+    .example("$0 --type length 1 --from ft --to in", "It will return the value '12'")
     .help()
     .version()
     .option("type", {
         type: "string",
-        describe: "The type of value (ex: length, area, volume, etc.),\nif not given, it will be recognized automatically."
+        describe: "The type of value (ex: length, area, volume, etc.),\nif not given, it will be recognized automatically.",
+        alias: "t"
     })
-    .option("v", {
+    .option("value", {
         type: "number",
-        describe: "The input value.",
-        alias: "value"
+        describe: "Specifies the input value."
     })
-    .option("f", {
+    .option("from", {
         type: "string",
-        describe: "The unit of the input value.",
-        alias: "from"
+        describe: "Specifies the unit of the input value."
     })
-    .option("t", {
+    .option("to", {
         type: "string",
-        describe: "The output unit.",
-        alias: "to"
+        describe: "Specifies the output unit."
     })
+    .check((argv) => {  //catching unspecified arguments
+        let missing = []
+
+        for (let arg of [ 'value', 'from', 'to' ]) {
+            if (argv[ arg ] === undefined) {
+                argv[ arg ] = argv._.shift()
+                if (argv[ arg ] === undefined)
+                    missing.push(arg)
+            }
+        }
+
+        if (missing.length) {
+            throw new Error(`Missing required argument${ missing.length > 1 ? 's' : '' }: ` + missing.join(', '))
+        }
+        return true
+    })
+    .strict(true)
     .argv
 
-console.warn("Not avaliable yet );")
+console.warn("Not avaliable yet ;-;")
