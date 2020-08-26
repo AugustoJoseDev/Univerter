@@ -12,6 +12,6 @@
     },
     "bin": {
         "univerter": "./bin/index.js",
-        "vert": "./bin/index.js"
+        "convert": "./bin/index.js"
     }
 }

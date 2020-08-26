@@ -2,7 +2,8 @@
 
 const argv = require("yargs")
     .usage("Usage: $0 [options] [--type <type>] <value> <from> <to>")
-    .example("$0 --type length 1 --from ft --to in", "It will return the value '12'")
+    .example("$0 1 ft --to in", "It will return the value 12")
+    .example("$0 1 ft in", "Also returns 12")
     .help()
     .version()
     .option("type", {
