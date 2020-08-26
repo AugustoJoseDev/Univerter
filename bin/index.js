@@ -8,6 +8,7 @@ const { value, from, to, type } = yargs
     .example("$0 1 ft in", "Returns 12")
     .example("$0 --from yds 1 --to in", "Returns 3")
     .example("$0 metres inches --value 1", "Returns 39.37")
+    .example("$0 1 --from='nautic mile' metres", "Returns 1852")
     .help()
     .version()
     .option("type", {
