@@ -1,5 +1,5 @@
 {
-    "name": "univerter",
+    "name": "univerte",
     "version": "1.0.0",
     "description": "A simple and useful unit converter cli.",
     "main": "bin/index.js",
