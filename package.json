@@ -2,16 +2,17 @@
     "name": "univerte",
     "version": "1.0.0",
     "description": "A simple and useful unit converter cli.",
-    "main": "bin/index.js",
-    "repository": "https://github.com/AugustoJoseDev/Univerter",
+    "main": "bin/cli.js",
+    "repository": "https://github.com/AugustoJoseDev/univerte",
     "author": "José Augusto Q. C Gomes <jose.augusto.comparotto@gmail.com>",
     "license": "MIT",
     "private": false,
     "dependencies": {
+        "cli-table3": "^0.6.0",
         "yargs": "^15.4.1"
     },
     "bin": {
-        "univerter": "./bin/index.js",
-        "convert": "./bin/index.js"
+        "univerte": "./bin/cli.js",
+        "convert": "./bin/cli.js"
     }
 }

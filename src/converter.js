@@ -1,43 +1,29 @@
-const { prefixes, types, aliases } = require("../data.json")
+const { prefixes, types } = require("../data.json")
 
-function convert({ value, from, to, type }) {
-
-    if (type !== undefined && !(type in types))
-        throw new Error("Invalid type!")
+function convert({ value, from, to }) {
 
     let formUnitValue = undefined
     let toUnitValue = undefined
 
-    if (type !== undefined) {
-        for (let unit in aliases[ type ]) {
-            if (formUnitValue === undefined && (unit === from || aliases[ type ][ unit ].includes(from))) {
-                formUnitValue = types[ type ][ unit ]
+    for (let type of Object.values(types)) {
+        for (let { name, symbol, value, aliases } of Object.values(type)) {
+            if (formUnitValue === undefined && [ name, symbol, ...aliases ].includes(from)) {
+                formUnitValue = value
             }
-            if (toUnitValue === undefined && (unit === to || aliases[ type ][ unit ].includes(to))) {
-                toUnitValue = types[ type ][ unit ]
-            }
-        }
-    } else {
-        for (let t in types) {
-            for (let unit in aliases[ t ]) {
-                if (formUnitValue === undefined && (unit === from || aliases[ t ][ unit ].includes(from))) {
-                    formUnitValue = types[ t ][ unit ]
-                }
-                if (toUnitValue === undefined && (unit === to || aliases[ t ][ unit ].includes(to))) {
-                    toUnitValue = types[ t ][ unit ]
-                }
+            if (toUnitValue === undefined && [ name, symbol, ...aliases ].includes(to)) {
+                toUnitValue = value
             }
         }
     }
 
     if (formUnitValue === undefined) {
-        throw new Error(`Unknown unit name or symbol '${ from }'`)
+        throw new Error(`Unknown name or symbol '${ from }'`)
     }
     if (toUnitValue === undefined) {
-        throw new Error(`Unknown unit name or symbol '${ to }'`)
+        throw new Error(`Unknown name or symbol '${ to }'`)
     }
 
     return value * formUnitValue / toUnitValue
 }
 
-module.exports = { convert }
+module.exports = { convert, prefixes, types }

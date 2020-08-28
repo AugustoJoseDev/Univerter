@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 const yargs = require('yargs')
+const Table = require("cli-table3")
+
 const { convert } = require("../src/converter")
 
 const { value, from, to, type } = yargs
-    .usage("Usage: $0 [options] [--type <type>] <value> <from> <to>")
+    .usage("Usage: $0 [--value] <value> [--from] <from> [--to] <to>")
     .example("$0 1 ft --to inches", "Returns 12")
     .example("$0 1 ft in", "Returns 12")
     .example("$0 --from yds 1 --to in", "Returns 3")
@@ -11,11 +13,6 @@ const { value, from, to, type } = yargs
     .example("$0 1 --from='nautic mile' metres", "Returns 1852")
     .help()
     .version()
-    .option("type", {
-        type: "string",
-        describe: "The type of value (ex: length, area, volume, etc.),\nif not given, it will be recognized automatically.",
-        alias: "t"
-    })
     .option("value", {
         type: "number",
         describe: "Specifies the input value."
@@ -44,14 +41,28 @@ const { value, from, to, type } = yargs
         }
         return true
     })
+    .epilogue(`See the accepted units of measure:\n\n${ unitsTables() }`)
     .strict(true)
     .argv
 
 
 try {
-    console.log(convert({ type, value, from, to }))
+    console.log(convert({ value, from, to }))
 } catch (error) {
     yargs
         .epilog(error.message)
         .showHelp()
+        .exit()
+}
+
+function unitsTables() {
+    return " Not avaliable yet. ;-;"
+
+    let table = new Table({
+        head: [ { colSpan: 3, hAlign: 'center', content: 'Lenght' } ],
+    })
+    table.push([ "Name", "Symbol", "Aliases" ])
+    table.push([ 7, 8, 9 ])
+
+    return table.toString()
 }
