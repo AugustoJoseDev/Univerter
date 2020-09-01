@@ -37,7 +37,7 @@ const { value, from, to, type } = yargs
         }
 
         if (missing.length) {
-            throw new Error(`Missing required argument${ missing.length > 1 ? 's' : '' }: ` + missing.join(', '))
+            throw new Error(`Missing required argument${ missing.length > 1 ? 's' : '' }: ${ missing.join(', ') }`)
         }
         return true
     })
