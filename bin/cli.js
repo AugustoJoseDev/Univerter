@@ -56,7 +56,7 @@ try {
 }
 
 function unitsTables() {
-    return " Not avaliable yet. ;-;"
+    return " Not avaliable yet. ;-;\n"
 
     let table = new Table({
         head: [ { colSpan: 3, hAlign: 'center', content: 'Lenght' } ],
