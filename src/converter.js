@@ -29,7 +29,7 @@ function convert({ value, from, to }) {
     }
 
     if (typeFrom !== typeTo) {
-        throw new Error(`It's not possible convert ${ from } to ${ to }. The unit types must be the same.`)
+        throw new Error(`It's not possible convert '${ from }' to '${ to }'. The unit types must be the same.`)
     }
 
 

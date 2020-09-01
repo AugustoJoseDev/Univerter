@@ -5,18 +5,14 @@ const Table = require("cli-table3")
 const { convert } = require("../src/converter")
 
 const { value, from, to, type } = yargs
-    .usage("Usage: $0 [--value] <value> [--from] <from> [--to] <to>")
-    .example("$0 1 ft --to inches", "Returns 12")
-    .example("$0 1 ft in", "Returns 12")
-    .example("$0 --from yds 1 --to in", "Returns 3")
+    .usage("Usage: $0 [--from] <from> [--to] <to> [--value <value>]")
+    .example("$0 ft --to inches 1", "Returns 12")
+    .example("$0 ft in 1", "Returns 12")
+    .example("$0 --from yds --to ft", "Returns 3")
     .example("$0 metres inches --value 1", "Returns 39.37")
-    .example("$0 1 --from='nautic mile' metres", "Returns 1852")
+    .example("$0 --from='nautic mile' metres", "Returns 1852")
     .help()
     .version()
-    .option("value", {
-        type: "number",
-        describe: "Specifies the input value."
-    })
     .option("from", {
         type: "string",
         describe: "Specifies the unit of the input value."
@@ -25,15 +21,24 @@ const { value, from, to, type } = yargs
         type: "string",
         describe: "Specifies the output unit."
     })
+    .option("value", {
+        type: "number",
+        describe: "Specifies the input value. Default value is 1."
+    })
     .check((argv) => {  //catching unspecified arguments
         let missing = []
 
-        for (let arg of [ 'value', 'from', 'to' ]) {
+        for (let arg of [ 'from', 'to', 'value' ]) {
             if (argv[ arg ] === undefined) {
                 argv[ arg ] = argv._.shift()
                 if (argv[ arg ] === undefined)
                     missing.push(arg)
             }
+        }
+
+        if (missing.length == 1 && missing[ 0 ] == 'value') {
+            argv.value = 1
+            return true
         }
 
         if (missing.length) {
