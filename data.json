@@ -4,31 +4,58 @@
             {
                 "name": "inch",
                 "symbol": "in",
-                "aliases": ["inches", "polegadas", "pol", "pols"],
+                "aliases": [
+                    "inches",
+                    "polegadas",
+                    "pol",
+                    "pols"
+                ],
                 "value": 1
             },
             {
                 "name": "feet",
                 "symbol": "ft",
-                "aliases": ["fts", "feets", "pé", "pés", "pe", "pes"],
+                "aliases": [
+                    "fts",
+                    "feets",
+                    "pé",
+                    "pés",
+                    "pe",
+                    "pes"
+                ],
                 "value": 12
             },
             {
                 "name": "yard",
                 "symbol": "yd",
-                "aliases": ["yds", "yards", "jd", "jds", "jarda", "jardas"],
+                "aliases": [
+                    "yds",
+                    "yards",
+                    "jd",
+                    "jds",
+                    "jarda",
+                    "jardas"
+                ],
                 "value": 36
             },
             {
                 "name": "metre",
                 "symbol": "m",
-                "aliases": ["metres", "metro", "metros"],
+                "aliases": [
+                    "metres",
+                    "metro",
+                    "metros"
+                ],
                 "value": 39.37007874015748
             },
             {
                 "name": "mile",
                 "symbol": "mi",
-                "aliases": ["miles", "milha", "milhas"],
+                "aliases": [
+                    "miles",
+                    "milha",
+                    "milhas"
+                ],
                 "value": 63360
             },
             {
@@ -45,28 +72,120 @@
                 ],
                 "value": 72913.38582677166
             }
+        ],
+        "weight": [
+            {
+                "name": "gram",
+                "symbol": "g",
+                "aliases": [
+                    "grams",
+                    "grama",
+                    "gramas"
+                ],
+                "value": 1
+            }
         ]
     },
     "prefixes": [
-        { "name": "yotta", "symbol": "Y", "value": 1e24 },
-        { "name": "zetta", "symbol": "Z", "value": 1e21 },
-        { "name": "exa", "symbol": "E", "value": 1e18 },
-        { "name": "peta", "symbol": "P", "value": 1e15 },
-        { "name": "tera", "symbol": "T", "value": 1e12 },
-        { "name": "giga", "symbol": "G", "value": 1e9 },
-        { "name": "mega", "symbol": "M", "value": 1e6 },
-        { "name": "kilo", "symbol": "k", "value": 1e3 },
-        { "name": "hecto", "symbol": "h", "value": 1e2 },
-        { "name": "deca", "symbol": "da", "value": 1e1 },
-        { "name": "deci", "symbol": "d", "value": 1e-1 },
-        { "name": "centi", "symbol": "c", "value": 1e-2 },
-        { "name": "milli", "symbol": "m", "value": 1e-3 },
-        { "name": "micro", "symbol": "u", "value": 1e-6 },
-        { "name": "nano", "symbol": "n", "value": 1e-9 },
-        { "name": "pico", "symbol": "p", "value": 1e-12 },
-        { "name": "femto", "symbol": "f", "value": 1e-15 },
-        { "name": "atto", "symbol": "a", "value": 1e-18 },
-        { "name": "zepto", "symbol": "z", "value": 1e-21 },
-        { "name": "yocto", "symbol": "y", "value": 1e-24 }
+        {
+            "name": "yotta",
+            "symbol": "Y",
+            "value": 1e24
+        },
+        {
+            "name": "zetta",
+            "symbol": "Z",
+            "value": 1e21
+        },
+        {
+            "name": "exa",
+            "symbol": "E",
+            "value": 1e18
+        },
+        {
+            "name": "peta",
+            "symbol": "P",
+            "value": 1e15
+        },
+        {
+            "name": "tera",
+            "symbol": "T",
+            "value": 1e12
+        },
+        {
+            "name": "giga",
+            "symbol": "G",
+            "value": 1e9
+        },
+        {
+            "name": "mega",
+            "symbol": "M",
+            "value": 1e6
+        },
+        {
+            "name": "kilo",
+            "symbol": "k",
+            "value": 1e3
+        },
+        {
+            "name": "hecto",
+            "symbol": "h",
+            "value": 1e2
+        },
+        {
+            "name": "deca",
+            "symbol": "da",
+            "value": 1e1
+        },
+        {
+            "name": "deci",
+            "symbol": "d",
+            "value": 1e-1
+        },
+        {
+            "name": "centi",
+            "symbol": "c",
+            "value": 1e-2
+        },
+        {
+            "name": "milli",
+            "symbol": "m",
+            "value": 1e-3
+        },
+        {
+            "name": "micro",
+            "symbol": "u",
+            "value": 1e-6
+        },
+        {
+            "name": "nano",
+            "symbol": "n",
+            "value": 1e-9
+        },
+        {
+            "name": "pico",
+            "symbol": "p",
+            "value": 1e-12
+        },
+        {
+            "name": "femto",
+            "symbol": "f",
+            "value": 1e-15
+        },
+        {
+            "name": "atto",
+            "symbol": "a",
+            "value": 1e-18
+        },
+        {
+            "name": "zepto",
+            "symbol": "z",
+            "value": 1e-21
+        },
+        {
+            "name": "yocto",
+            "symbol": "y",
+            "value": 1e-24
+        }
     ]
 }
