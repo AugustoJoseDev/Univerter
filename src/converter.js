@@ -1,39 +1,96 @@
 const { prefixes, types } = require("../data.json")
 
-function convert({ value, from, to }) {
+function convert({ from, to, value }) {
 
-    let formUnitValue = undefined
-    let toUnitValue = undefined
+    let fromUnit = resolve(from)
+    let toUnit = resolve(to)
 
-    let typeFrom = undefined
-    let typeTo = undefined
+    if (fromUnit.type !== toUnit.type) {
+        throw new Error(`It's not possible convert '${ fromUnit.name }' (${ fromUnit.type }) to '${ toUnit.name }' (${ toUnit.type }). The unit types must be the same.`)
+    }
 
-    for (let type of Object.values(types)) {
-        for (let { name, symbol, value, aliases } of Object.values(type)) {
-            if (formUnitValue === undefined && [ name, symbol, ...aliases ].includes(from)) {
-                formUnitValue = value
-                typeFrom = type
+    return value * fromUnit.value / toUnit.value
+}
+
+
+function resolve(expression) {
+
+    let matches = []
+
+    let number = undefined
+
+    if (match = expression.match(/^(\d+(?:\.\d+)?)/)) {
+        number = match[ 1 ]
+        expression = expression.slice(number.length)
+        number = Number.parseFloat(number)
+    }
+
+    for (const unit of resolveUnit(expression)) {
+        matches.push(unit)
+    }
+    for (const prefix of resolvePrefix(expression)) {
+        matches.push(prefix)
+    }
+
+    for (let i = 1; i < expression.length; i++) {
+
+        let prefixes = resolvePrefix(expression.substring(0, i))
+        let units = resolveUnit(expression.substring(i))
+
+        for (const prefix of prefixes) {
+            for (const unit of units) {
+                matches.push({
+                    name: prefix.name + unit.name,
+                    symbol: prefix.symbol + unit.symbol,
+                    value: prefix.value * unit.value,
+                    type: unit.type
+                })
             }
-            if (toUnitValue === undefined && [ name, symbol, ...aliases ].includes(to)) {
-                toUnitValue = value
-                typeTo = type
+        }
+
+    }
+
+    if (matches.length === 0) {
+        throw new Error(`Unknown name or symbol '${ expression }'.`)
+    }
+
+    if (matches.length > 1) {
+        console.warn(`The expression '${ expression }' is ambiguous, prefer to use the extensive name. Matches: ${ matches.map(({ type, name }) => `${ name } (${ type })`).join(', ') }.`)
+    }
+
+    if (number !== undefined)
+        matches = matches.map(({ name, symbol, type, value }) => ({ name, symbol, type, value: value * number }))
+
+    return matches[ 0 ]
+}
+
+function resolveUnit(expression) {
+
+    const matches = []
+
+    for (let type in types) {
+        for (let { name, symbol, value, aliases } of types[ type ]) {
+            if ([ name, symbol, ...aliases ].includes(expression)) {
+                matches.push({ name, symbol, value, type })
             }
         }
     }
 
-    if (formUnitValue === undefined) {
-        throw new Error(`Unknown name or symbol '${ from }'`)
-    }
-    if (toUnitValue === undefined) {
-        throw new Error(`Unknown name or symbol '${ to }'`)
+    return matches
+}
+
+function resolvePrefix(expression) {
+
+    const matches = []
+
+    for (let { name, symbol, value } of prefixes) {
+        if ([ name, symbol ].includes(expression)) {
+            matches.push({ name, symbol, value, type: "prefix" })
+        }
     }
 
-    if (typeFrom !== typeTo) {
-        throw new Error(`It's not possible convert '${ from }' to '${ to }'. The unit types must be the same.`)
-    }
 
-
-    return value * formUnitValue / toUnitValue
+    return matches
 }
 
 module.exports = { convert, prefixes, types }

@@ -4,11 +4,12 @@ const Table = require("cli-table3")
 
 const { convert } = require("../src/converter")
 
-const { value, from, to, type } = yargs
+const { value, from, to } = yargs
     .usage("Usage: $0 [--from] <from> [--to] <to> [ [--value] <value>]")
     .example("$0 ft --to inches", "Returns 12")
     .example("$0 ft in 1", "Returns 12")
     .example("$0 --from yds --to ft 1", "Returns 3")
+    .example("$0 inches cm", "Returns 2.54")
     .example("$0 metres inches --value 1", "Returns 39.37")
     .example("$0 --from='nautic mile' metres", "Returns 1852")
     .help()
