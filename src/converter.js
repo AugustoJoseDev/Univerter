@@ -17,14 +17,6 @@ function resolve(expression) {
 
     let matches = []
 
-    let number = undefined
-
-    if (match = expression.match(/^(\d+(?:\.\d+)?)/)) {
-        number = match[ 1 ]
-        expression = expression.slice(number.length)
-        number = Number.parseFloat(number)
-    }
-
     for (const unit of resolveUnit(expression)) {
         matches.push(unit)
     }
@@ -57,9 +49,6 @@ function resolve(expression) {
     if (matches.length > 1) {
         console.warn(`The expression '${ expression }' is ambiguous, prefer to use the extensive name. Matches: ${ matches.map(({ type, name }) => `${ name } (${ type })`).join(', ') }.`)
     }
-
-    if (number !== undefined)
-        matches = matches.map(({ name, symbol, type, value }) => ({ name, symbol, type, value: value * number }))
 
     return matches[ 0 ]
 }
